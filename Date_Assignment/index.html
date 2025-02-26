@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Countdown</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffebcd;
+            margin: 50px;
+        }
+        h1 {
+            color: #ff4500;
+        }
+        #output {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ff4500;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Birthday Countdown</h1>
+    <p>Enter your birthday:</p>
+    <input type="date" id="birthday">
+    <button onclick="calculateDays()">Check Days Left</button>
+    <p id="output"></p>
+
+    <script>
+        function calculateDays() {
+            const input = document.getElementById("birthday").value;
+            if (!input) {
+
+                document.getElementById("output").textContent = "Please enter a valid date.";
+                return;
+            }
+
+            const today = new Date();
+
+            const birthday = new Date(input);
+
+            birthday.setFullYear(today.getFullYear());
+
+            if (birthday.getDate() === today.getDate() && birthday.getMonth() === today.getMonth()) {
+                document.getElementById("output").textContent = "Happy Birthday !";
+                return;
+            }
+
+            if (birthday < today) {
+                birthday.setFullYear(today.getFullYear() + 1);
+            }
+
+            const timeDiff = birthday - today;
+            const daysLeft = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+
+            document.getElementById("output").textContent = `Only ${daysLeft} days left until your birthday ! `;
+        }
+    </script>
+</body>
+</html>
