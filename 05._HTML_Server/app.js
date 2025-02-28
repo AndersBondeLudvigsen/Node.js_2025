@@ -7,6 +7,9 @@ const { parties } =  require('./util/partiesLibary.js')
 
 const app = express()
 
+// Sikkerheds feature, bruges til at tilgå public
+app.use(express.static('public'))
+
 let visitorCount = 0;
 
 
@@ -15,7 +18,7 @@ res.sendFile(__dirname + "/public/frontpage/index.html")
 })
 
 app.get("/partypage", (req,res)=>{
-    res.sendFile(__dirname + "/public/partypage/partypage.html")
+    res.sendFile(__dirname + "/public/partypage/Partypage.html")
 })
 
 
