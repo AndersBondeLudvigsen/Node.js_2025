@@ -1,8 +1,9 @@
-const express = require('express')
-
-const { parties } =  require('./util/partiesLibary.js')
+//const express = require('express')
+//const { parties } =  require('./util/partiesLibary.js')
 // console.log(parties)
-
+import express from 'express';
+import path from 'path';
+import partiesLibaryESModules from './util/partiesLibaryES.js';
 
 
 const app = express()
@@ -14,11 +15,11 @@ let visitorCount = 0;
 
 
 app.get("/", (req,res)=>{
-res.sendFile(__dirname + "/public/frontpage/index.html")
+res.sendFile(path.resolve("public/frontpage/index.html"));
 })
 
 app.get("/partypage", (req,res)=>{
-    res.sendFile(__dirname + "/public/partypage/Partypage.html")
+    res.sendFile(path.resolve("public/partypage/Partypage.html"))
 })
 
 
