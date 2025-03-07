@@ -1,0 +1,17 @@
+nav{
+    height: 10vh;
+}
+
+main{
+flex:1;
+}
+
+footer{
+    height:  5vh;
+}
+
+body{
+    min-height: 98vh;
+    display: flex;
+    flex-direction: column;
+}

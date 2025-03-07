@@ -1,0 +1,28 @@
+{
+  "name": "doginder",
+  "version": "0.0.1",
+  "description": "Tinder for Indian dogs",
+  "type": "module",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "nodemon": "^2.0.0"
+  },
+  "scripts": {
+    "dev": "cross-env PORT=8080 nodemon app.js",
+    "prod": "cross-env PORT=80 ENVIRONMENT=PROD node app.js"
+  },
+  "keywords": [
+    "tinder",
+    "dog",
+    "dogs",
+    "indian",
+    "match-making",
+    "love"
+  ],
+  "author": "Anders",
+  "license": "ISC"
+}
