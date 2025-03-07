@@ -3,6 +3,8 @@ const app = express();
 
 import path from 'path'
 
+import { getMatches } from './util/matches.js';
+
 app.use(express.static("public"));
 
 app.get("/",(req,res)=>{
@@ -13,6 +15,10 @@ app.get("/matches",(req,res)=>{
     res.sendFile(path.resolve('public/matches/matches.html'))
 });
 
+app.get("/api/matches", async (req,res)=>{
+    const matches = await getMatches();
+    res.send({ data : matches })
+})
 
 
 const PORT = Number(process.env.PORT) || 8080
