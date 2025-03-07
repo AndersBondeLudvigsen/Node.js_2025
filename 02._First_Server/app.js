@@ -50,9 +50,6 @@ app.get("/favorite/:flower/:animal", functionRefrenceFlowerAndAnimal);
 
 
 
-app.get("/favoritethings/:flower/:animal", (req, res) => {
-    res.send({ data: `Favorite things are ${req.params.flower} and favorite animal is ${req.params.animal}` });
-});
 
 
 
@@ -82,7 +79,25 @@ app.post("/aleksandersmor", (req,res) =>{
     res.send({data : req.body})
 })
 
+app.get("/favoritethings/:flower/:animal", (req, res) => {
+    res.send({ data: `Favorite things are ${req.params.flower} and favorite animal is ${req.params.animal}` });
+});
 
 
+
+app.get("/redirecttofavoritethings", (req,res)=>{
+    res.redirect("/favoritethings/tulips/lions")
+});
+
+
+/* assignment 
+Create a /proxt endpoint that calls the google homepage and returns the page to the client
+*/
+
+app.get("/proxy" , (req,res)=>{
+    fetch("https://www.google.com")
+    .then ((response) => response.text())
+    .then ((data) => res.send(data))
+})
 
 app.listen(8080);
