@@ -36,9 +36,9 @@ app.get("/fingerbones/:id", (req, res) => {
 
 app.post("/fingerbones",(req,res) =>{
 const { name, length} = req.body;
-const id = fingerbones.length +1;
+const providedFingerBoneid = fingerbones.length +1;
 
-const createdFingerbone = {id, name, length} ;
+const createdFingerbone = {providedFingerBoneid, name, length} ;
 fingerbones.push(createdFingerbone)
 res.status(201).send({data: createdFingerbone})
 });

@@ -3,7 +3,7 @@
 // console.log(parties)
 import express from 'express';
 import path from 'path';
-import partiesLibaryESModules from './util/partiesLibaryES.js';
+//import partiesLibaryESModules from './util/partiesLibaryES.js';
 
 
 const app = express()

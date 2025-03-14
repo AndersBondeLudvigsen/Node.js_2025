@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="3;/partyPage"
     <title>Frontpage</title>
     <link rel="stylesheet" href="./frontpage/frontpage.css"
 
@@ -32,7 +33,18 @@
 
 <div id="visitorcount"></div>
 <script src="./frontpage/frontpage.js"></script>
+<a href="/partypage">PARTYPAGE</a>
+
+
+
 <script>
+// task: after 3 sec dynamically go to the partypage
+
+/* setTimeout(() => {
+    window.location.replace ("/partypage");
+}, 3000); */
+
+
     // assignment: fetch the visitors count and show on page
     fetch("/visitorscounts")
     .then ((response) => response.json())
@@ -41,6 +53,7 @@
         visitorcountDiv.innerHTML = result.data;
     });
     
+   
 </script>
 
 </body>
