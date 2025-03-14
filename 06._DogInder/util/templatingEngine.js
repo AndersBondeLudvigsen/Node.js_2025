@@ -7,7 +7,10 @@ export function readPage(path){
 const header = readPage("./public/componetens/header/header.html")
 const footer = readPage("./public/componetens/footer/footer.html")
 
-export function constructPage(pageContent){
-    return header + pageContent + footer;
-
+export function constructPage(pageContent, options = {}){
+    return header
+            .replace('$NAV_TITLE$', options.title || 'DogInder')
+            .replace('$CSS_LINKS$', options.cssLinks || '') 
+     + pageContent
+     + footer;
 }
