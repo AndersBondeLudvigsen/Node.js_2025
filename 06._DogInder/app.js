@@ -2,17 +2,23 @@ import express from 'express';
 const app = express();
 
 import path from 'path'
+import { frontpagePage } from './util/pages.js';
+import { matchesPagePage } from './util/pages.js';
 
 import { getMatches } from './util/matches.js';
 
 app.use(express.static("public"));
 
+
+
+
+
 app.get("/",(req,res)=>{
-    res.sendFile(path.resolve('public/frontpage/frontpage.html'))
+    res.send(frontpagePage)
 });
 
 app.get("/matches",(req,res)=>{
-    res.sendFile(path.resolve('public/matches/matches.html'))
+    res.send(matchesPagePage)
 });
 
 app.get("/api/matches", async (req,res)=>{

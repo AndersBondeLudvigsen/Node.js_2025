@@ -21,7 +21,7 @@ function createMatchProfile(dog){
     dogMatchesNameH1.textContent = dog.name;
     dogMatchesBioH3.textContent = dog.bio;
     dogMatchesCityH3.textContent = dog.city;
-    dogMatchesStreetAddressH3.innerText = dog.streetAddress;
+    dogMatchesStreetAddressH3.textContent = dog.streetAddress;
     const imageTag = document.createElement("img");
     imageTag.src = dog.image;
     imageTag.id = "dog-matches-image";
